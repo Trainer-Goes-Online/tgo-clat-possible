@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CLAT Possible — The 3-Day CLAT Rank Roadmap · ₹49",
+  description:
+    "A 3-day live CLAT masterclass for Class 11 & 12 students and droppers. See the exact rank you can score, and the clear plan to your dream NLU.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/funnel.css" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
