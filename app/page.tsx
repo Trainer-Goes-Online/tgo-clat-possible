@@ -100,7 +100,7 @@ export default function Page() {
       <section className="section" id="champions">
         <div className="inner-wide">
           <div className="sec-head"><span className="eyebrow">Our Champions&rsquo; Wall</span>
-            <h2 className="sec-h2">Celebrating Remarkable<br className="bk"/><span className="em">CLAT Achievements</span></h2></div>
+            <h2 className="sec-h2">Celebrating Remarkable <br className="bk"/><span className="em">CLAT Achievements</span></h2></div>
           <div className="champwall reveal">
             {CHAMP_ROWS.map((row, r) => (
               <div className="champrail" key={r}>
@@ -129,7 +129,7 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">The honest starting point</span>
-            <h2 className="sec-h2">Do You Dream of a Seat<br className="bk"/>in a Top NLU, <span className="em">But&hellip;</span></h2></div>
+            <h2 className="sec-h2">Do You Dream of a Seat <br className="bk"/>in a Top NLU, <span className="em">But&hellip;</span></h2></div>
           <div className="pains reveal">
             <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 0 1 4.7 1.7c0 1.8-2.6 2.1-2.6 3.5"/><path d="M12 17.4h.01"/></svg></span><p>Confused by the syllabus and exam pattern, and not sure where to even begin?</p></div>
             <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6.6C10.3 5.4 7.6 4.9 4 5.1v12.6c3.6-.2 6.3.3 8 1.5 1.7-1.2 4.4-1.7 8-1.5V5.1c-3.6-.2-6.3.3-8 1.5z"/><path d="M12 6.6V19.2"/></svg></span><p>Worried about balancing school or board studies with serious CLAT prep?</p></div>
@@ -146,7 +146,7 @@ export default function Page() {
       <section className="section">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">The real problem</span>
-            <h2 className="sec-h2">You are asked to gamble lakhs<br className="bk"/><span className="em">before</span> you know<br className="bk"/>where you stand</h2></div>
+            <h2 className="sec-h2">You are asked to gamble lakhs <br className="bk"/><span className="em">before</span> you know <br className="bk"/>where you stand</h2></div>
           <div className="prose reveal">
             <p className="lede">You have decided you want a top NLU. The trouble is, the moment you start looking, you are flooded.</p>
             <p>A huge syllabus, dozens of coaching options, endless books and test series, and everyone insisting they are the right choice. And almost all of them offer you the same thing: a free demo class. One sample lecture, designed to get you to sign up for a course that costs one to two lakh rupees.</p>
@@ -164,7 +164,7 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">Instead, imagine this</span>
-            <h2 className="sec-h2">In 3 days, you start your<br className="bk"/>journey with a <span className="em">map</span>,<br className="bk"/>not a guess</h2></div>
+            <h2 className="sec-h2">In 3 days, you start your <br className="bk"/>journey with a <span className="em">map</span>, <br className="bk"/>not a guess</h2></div>
           <div className="imagine reveal">
             <div className="snapshot">
               <div className="snap-top">
@@ -273,9 +273,9 @@ export default function Page() {
       <section className="section">
         <div className="inner-wide">
           <div className="sec-head"><span className="eyebrow">Meet your host</span>
-            <h2 className="sec-h2">Taught by the people<br className="bk"/>who will <span className="em">actually<br className="bk"/>teach your child</span></h2></div>
+            <h2 className="sec-h2">Taught by the people <br className="bk"/>who will <span className="em">actually <br className="bk"/>teach your child</span></h2></div>
           <div className="host reveal">
-            <div className="host-photo"><span className="host-mono">SS</span><span className="host-slot">Portrait to be added</span></div>
+            <div className="host-photo"><img src="/herocoachimg.webp" alt="Dr. Surabhi Modi Sahai, MD &amp; CEO, CLAT Possible" /></div>
             <div>
               <p className="host-name">Dr. Surabhi Modi Sahai</p>
               <p className="host-role">MD &amp; CEO, CLAT Possible</p>
@@ -296,7 +296,7 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner-wide">
           <div className="sec-head"><span className="eyebrow">This masterclass is built for you if</span>
-            <h2 className="sec-h2">Wherever you&rsquo;re starting from,<br className="bk"/>you leave with<br className="bk"/><span className="em">your number</span></h2></div>
+            <h2 className="sec-h2">Wherever you&rsquo;re starting from, <br className="bk"/>you leave with <br className="bk"/><span className="em">your number</span></h2></div>
           <div className="personas reveal">
             <div className="persona"><span className="persona-tag">Class 11 &amp; 12 &middot; just starting</span>
               <h3>The early starter</h3>
