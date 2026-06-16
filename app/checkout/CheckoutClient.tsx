@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { setMetaAdvancedMatching } from "@/lib/analytics";
+import { capturePageParams, getStoredParams, paramsToQuery } from "@/lib/params";
+import { WEBINAR } from "@/lib/webinar";
 
 /* CLAT Possible checkout (R11). Real Razorpay flow, mirroring the proven
    sreshtha pattern: POST /api/razorpay/create-order -> open Razorpay checkout.js
@@ -46,6 +49,37 @@ export default function CheckoutClient() {
   const set = (k: keyof Form) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((p) => ({ ...p, [k]: e.target.value }));
 
+  // Carry LP params into checkout (from the URL or the cp_params cookie) and
+  // keep the cookie fresh so they reach the verify route + /confirmation.
+  useEffect(() => {
+    capturePageParams();
+  }, []);
+
+  // Fire Meta Advanced Matching as soon as the form is valid + filled (debounced
+  // 500ms), independent of payment — this identifies subsequent pixel events and
+  // writes the cp_mam cookie so even a later return visit has full identity.
+  useEffect(() => {
+    const filled =
+      form.first_name.trim() &&
+      form.last_name.trim() &&
+      form.email.trim() &&
+      form.phone.trim() &&
+      form.town.trim();
+    if (!filled) return;
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim())) return;
+    const timer = setTimeout(() => {
+      void setMetaAdvancedMatching({
+        email: form.email,
+        phone: `+91${form.phone}`,
+        firstName: form.first_name,
+        lastName: form.last_name,
+        city: form.town,
+        country: "IN",
+      });
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [form]);
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!e.currentTarget.checkValidity()) {
@@ -81,14 +115,41 @@ export default function CheckoutClient() {
         theme: { color: "#087EFF" },
         handler: async (resp: Record<string, string>) => {
           try {
+            // Refresh MAM with the latest values so the /confirmation PageView
+            // also ships with full hashed identity (high browser-side EMQ).
+            await setMetaAdvancedMatching({
+              email: form.email,
+              phone: `+91${form.phone}`,
+              firstName: form.first_name,
+              lastName: form.last_name,
+              city: form.town,
+              country: "IN",
+            });
             const v = await fetch("/api/razorpay/verify", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(resp),
+              body: JSON.stringify({
+                ...resp,
+                customer: {
+                  first_name: form.first_name,
+                  last_name: form.last_name,
+                  email: form.email,
+                  phone: form.phone,
+                  dial_code: "+91",
+                  country_code: "IN",
+                  city: form.town,
+                  grade: form.grade,
+                },
+                params: getStoredParams(),
+                event_source_url:
+                  typeof window !== "undefined" ? window.location.href : "",
+              }),
             });
             const data = await v.json();
-            if (data.ok) window.location.href = "/confirmation";
-            else throw new Error(data.error || "Payment could not be verified.");
+            if (data.ok) {
+              const qs = paramsToQuery(getStoredParams());
+              window.location.href = qs ? `/confirmation?${qs}` : "/confirmation";
+            } else throw new Error(data.error || "Payment could not be verified.");
           } catch (err) {
             alert(err instanceof Error ? err.message : "Verification failed.");
             setLoading(false);
@@ -135,7 +196,7 @@ export default function CheckoutClient() {
           <aside className="card">
             <div className="card-head"><span className="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M5 4h11l2.5 12.5H7.5z" /><path d="M5 4L4 2H2" /><circle cx="9" cy="20" r="1.3" fill="currentColor" /><circle cx="16" cy="20" r="1.3" fill="currentColor" /></svg></span>
               <div><h2 className="card-title">Order Summary</h2></div></div>
-            <div className="item"><span className="item-logo">CP</span><div><p className="item-t">The 3-Day CLAT Rank Roadmap</p><p className="item-d">3 live days on Zoom (28, 29 &amp; 30 June, 11 AM IST), ranker strategies, and your Diagnostic Rank Predictor result.</p></div></div>
+            <div className="item"><span className="item-logo">CP</span><div><p className="item-t">The 3-Day CLAT Rank Roadmap</p><p className="item-d">{`3 live days on Zoom (${WEBINAR.datesShort}, ${WEBINAR.timeShort}), ranker strategies, and your Diagnostic Rank Predictor result.`}</p></div></div>
             <div className="line"><span>Webinar seat</span><span><span className="was">&#8377;499</span><span className="now">&#8377;49</span></span></div>
             <div className="methods"><div className="methods-l">Accepted Payment Methods</div>
               <div className="chips">

@@ -1,0 +1,17 @@
+// Single source of truth for checkout + Meta tracking constants (CLAT Possible).
+// Pure constants only (no "use client") so this can be imported from both server
+// routes and client components.
+
+export const CHECKOUT_CONFIG = {
+  brandName: "CLAT Possible",
+  productName: "The 3-Day CLAT Rank Roadmap (webinar seat)",
+  // Tripwire custom event, fired server-side alongside the standard `Purchase`.
+  customEventName: "sales",
+  currency: "INR",
+  amountRupees: 49,
+} as const;
+
+// First-party cookies (same-origin, SameSite=Lax, 30-day TTL).
+export const MAM_COOKIE_NAME = "cp_mam"; // hashed Meta Advanced Matching values
+export const PARAMS_COOKIE_NAME = "cp_params"; // forwarded landing-page URL params
+export const COOKIE_TTL_SECONDS = 30 * 24 * 60 * 60;

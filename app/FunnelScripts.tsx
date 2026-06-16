@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { capturePageParams, forwardParamsToCheckoutLinks } from "@/lib/params";
+import { WEBINAR } from "@/lib/webinar";
 
 /* Client island for the landing page: the price-deadline countdown, the
    scroll-linked 3-day journey spine, the stat count-up, and reveal-on-scroll.
@@ -8,13 +10,21 @@ import { useEffect } from "react";
    hydration. Everything fails open (content visible if JS / motion is off). */
 export default function FunnelScripts() {
   useEffect(() => {
+    // Capture every landing-page URL param (utm_*, fbclid, gclid, …) into the
+    // cp_params cookie and forward them onto every /checkout CTA link.
+    try {
+      capturePageParams();
+      forwardParamsToCheckoutLinks();
+    } catch {}
+
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // ---- countdown (placeholder: 72h from load; wire to the real deadline) ----
+    // ---- countdown to the real webinar start (Day 1 @ time, from env) ----
     const cd = document.getElementById("countdown");
     let cdTimer: number | undefined;
     if (cd) {
-      const end = Date.now() + 72 * 3600 * 1000;
+      const parsed = new Date(WEBINAR.deadlineIso).getTime();
+      const end = Number.isNaN(parsed) ? Date.now() : parsed;
       const d = cd.querySelector("[data-d]")!,
         h = cd.querySelector("[data-h]")!,
         m = cd.querySelector("[data-m]")!,

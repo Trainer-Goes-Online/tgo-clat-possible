@@ -1,4 +1,5 @@
 import FunnelScripts from "./FunnelScripts";
+import { WEBINAR } from "@/lib/webinar";
 
 const CHAMPS = [
   "Air-1", "Air-2", "Air-3", "Air-4", "Air-5", "Air-5-B", "Air-6", "Air-7",
@@ -11,8 +12,8 @@ const CHAMP_ROWS = [
 ];
 const TICKER = [
   "3-Day Live CLAT Masterclass",
-  "28, 29 & 30 June 2026",
-  "11:00 AM IST · 2 hrs/day",
+  WEBINAR.datesLong,
+  `${WEBINAR.time} · ${WEBINAR.duration}`,
   "₹49 until the deadline",
   "Live on Zoom · Replay if you miss a day",
   "Find the rank you can actually score",
@@ -62,12 +63,12 @@ export default function Page() {
               <div className="hcard reveal reveal-d1">
                 <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span>
                 <span className="hcard-k">Dates</span>
-                <span className="hcard-v">28, 29 &amp; 30 June 2026</span>
+                <span className="hcard-v">{WEBINAR.datesLong}</span>
               </div>
               <div className="hcard reveal reveal-d2">
                 <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg></span>
                 <span className="hcard-k">Time</span>
-                <span className="hcard-v">11:00 AM IST &middot; 2 hrs/day</span>
+                <span className="hcard-v">{`${WEBINAR.time} · ${WEBINAR.duration}`}</span>
               </div>
               <div className="hcard reveal reveal-d3">
                 <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21c5-4.6 7-8 7-11a7 7 0 1 0-14 0c0 3 2 6.4 7 11z"/></svg></span>
@@ -193,27 +194,27 @@ export default function Page() {
       <section className="section stage" id="roadmap">
         <span className="stage-grain" aria-hidden="true"></span>
         <div className="inner" style={{position:"relative"}}>
-          <div className="sec-head"><span className="eyebrow">Live on Zoom &middot; 11:00 AM IST &middot; 2 hours each day</span>
+          <div className="sec-head"><span className="eyebrow">{`Live on Zoom · ${WEBINAR.time} · ${WEBINAR.durationLong}`}</span>
             <h2 className="sec-h2">Exactly What Happens Across the <span className="em">3 Days</span></h2></div>
           <div className="journey" id="journey">
             <div className="jrail" aria-hidden="true"></div>
             <div className="jfill" aria-hidden="true"></div>
 
             <div className="jstep"><span className="jnode" aria-hidden="true"></span>
-              <div className="jday">Day 1 &middot; 28 June</div>
+              <div className="jday">{`Day 1 · ${WEBINAR.day1}`}</div>
               <h3 className="jtitle">The foundations</h3>
               <p className="jbody">How CLAT actually works, the real scoring map, and how top rankers approach the paper, taught live by the CLAT Possible team. By the end of Day 1 you finally understand <span className="hl">what cracking CLAT really takes</span>.</p>
             </div>
 
             <div className="jstep"><span className="jnode" aria-hidden="true"></span>
-              <div className="jday">Day 2 &middot; 29 June</div>
+              <div className="jday">{`Day 2 · ${WEBINAR.day2}`}</div>
               <h3 className="jtitle">The winning strategies</h3>
               <p className="jbody">Section by section (legal reasoning, English, GK and current affairs, logical reasoning, quant), the exact strategies that produce ranks, plus real CLAT rankers live, sharing what they did differently.</p>
               <span className="jsub"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><path d="M16 11a3 3 0 1 0-3-3M3 20c0-3 2.7-4.5 6-4.5M14 20c0-2.4 1.8-3.8 4-4 2.2.2 4 1.6 4 4"/></svg> Parents join on Day 2, because the plan only holds when the whole family is behind it</span>
             </div>
 
             <div className="jstep jstep--final"><span className="jnode" aria-hidden="true"></span>
-              <div className="jday">Day 3 &middot; 30 June</div>
+              <div className="jday">{`Day 3 · ${WEBINAR.day3}`}</div>
               <h3 className="jtitle">Your rank, and your plan</h3>
               <p className="jbody">Now that you have the foundations and the strategies, you take the <span className="hl">Diagnostic Rank Predictor</span> test. You walk out with your projected CLAT rank, accurate even if you started from zero this week, and a customised roadmap to your target NLU. You came in unsure. You leave with a number and a plan.</p>
             </div>
@@ -363,10 +364,10 @@ export default function Page() {
           <p className="cta-note"><span className="pin">&#9679;</span> 100% money-back &middot; &#8377;49 until the deadline &middot; Live on Zoom</p>
           <div className="colophon">
             <p className="disclaimer"><b>Disclaimer:</b> CLAT Possible is an education and coaching webinar programme. The information shared in this webinar is for educational and informational purposes only and does not constitute a guarantee of admission, rank, or any specific outcome. Individual results may vary and depend on each student&rsquo;s own effort, consistency, and preparation.</p>
-            <p className="disclaimer">This website is operated and maintained by CLAT Possible. Use of this website is governed by our <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>. We do not guarantee specific results or admission to any National Law University. Results vary and depend on individual effort, consistency of preparation, and other factors outside our control.</p>
+            <p className="disclaimer">This website is operated and maintained by CLAT Possible. Use of this website is governed by our <a href="/terms">Terms &amp; Conditions</a> and <a href="/privacy">Privacy Policy</a>. We do not guarantee specific results or admission to any National Law University. Results vary and depend on individual effort, consistency of preparation, and other factors outside our control.</p>
             <p className="disclaimer">All content is the intellectual property of CLAT Possible. Any duplication, reproduction, or distribution without written permission is strictly prohibited.</p>
             <p className="disclaimer">This website is owned and operated by CLAT Possible.</p>
-            <p className="colophon-legal"><a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Refund</a> &middot; &copy; 2026 CLAT Possible</p>
+            <p className="colophon-legal"><a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/refund">Refund</a> &middot; &copy; 2026 CLAT Possible</p>
           </div>
         </div>
       </section>
