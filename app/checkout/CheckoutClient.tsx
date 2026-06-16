@@ -78,7 +78,7 @@ export default function CheckoutClient() {
           contact: `+91${form.phone}`,
         },
         notes: { grade: form.grade, town: form.town },
-        theme: { color: "#A9792B" },
+        theme: { color: "#087EFF" },
         handler: async (resp: Record<string, string>) => {
           try {
             const v = await fetch("/api/razorpay/verify", {
@@ -104,16 +104,9 @@ export default function CheckoutClient() {
   }
 
   return (
-    <div className="page-stage">
-      <div className="trust">
-        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10.5l4 4 8-9" /></svg> Secure Checkout</span><span className="sep">/</span>
-        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10.5l4 4 8-9" /></svg> 256-Bit SSL</span><span className="sep">/</span>
-        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10.5l4 4 8-9" /></svg> 100% Money-Back</span>
-      </div>
-
+    <div className="page-stage page-light">
       <div className="shell">
         <div className="co-head">
-          <div className="ck-brand"><span className="mark">CP</span> CLAT Possible</div>
           <span className="eyebrow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z" /></svg> You&rsquo;re one step from your seat</span>
           <h1>Reserve Your Spot in the <span className="em">3-Day Roadmap</span></h1>
           <p>Add your details and lock your seat. Your private Zoom link hits your inbox the moment your <span className="price">&#8377;49</span> is confirmed.</p>
@@ -146,10 +139,10 @@ export default function CheckoutClient() {
             <div className="line"><span>Webinar seat</span><span><span className="was">&#8377;499</span><span className="now">&#8377;49</span></span></div>
             <div className="methods"><div className="methods-l">Accepted Payment Methods</div>
               <div className="chips">
-                <span className="chip chip--upi">UPI</span>
-                <span className="chip chip--visa">VISA</span>
-                <span className="chip chip--mc"><i className="a" /><i className="b" /></span>
-                <span className="chip chip--rupay">RuPay</span>
+                <span className="chip chip--logo"><img src="/assets/payment/upi.svg" alt="UPI" /></span>
+                <span className="chip chip--logo"><img src="/assets/payment/visa.svg" alt="Visa" /></span>
+                <span className="chip chip--logo"><img src="/assets/payment/mastercard.svg" alt="Mastercard" /></span>
+                <span className="chip chip--logo"><img src="/assets/payment/rupay.svg" alt="RuPay" /></span>
                 <span className="chip chip--nb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9.5L12 4l9 5.5" /><path d="M5 9.5v9M19 9.5v9M9 9.5v9M15 9.5v9M3 20.5h18" /></svg> Net Banking</span>
               </div>
             </div>

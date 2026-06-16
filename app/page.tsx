@@ -1,66 +1,127 @@
 import FunnelScripts from "./FunnelScripts";
 
+const CHAMPS = [
+  "Air-1", "Air-2", "Air-3", "Air-4", "Air-5", "Air-5-B", "Air-6", "Air-7",
+  "Air-8", "Air-9", "Air-10", "Air-11", "Air-12", "Air-13", "Air",
+];
+const CHAMP_ROWS = [
+  CHAMPS.slice(0, 5),
+  CHAMPS.slice(5, 10),
+  CHAMPS.slice(10, 15),
+];
+const TICKER = [
+  "3-Day Live CLAT Masterclass",
+  "28, 29 & 30 June 2026",
+  "11:00 AM IST · 2 hrs/day",
+  "₹49 until the deadline",
+  "Live on Zoom · Replay if you miss a day",
+  "Find the rank you can actually score",
+  "100% money-back guarantee",
+];
+
 export default function Page() {
   return (
     <>
-      <header className="hero stage">
+      <div className="topbar" aria-hidden="true">
+        <div className="topbar-track">
+          {[...TICKER, ...TICKER].map((t, i) => (
+            <span className="topbar-item" key={i}><span className="topbar-dot"></span>{t}</span>
+          ))}
+        </div>
+      </div>
+
+      <header className="hero">
         <span className="stage-grain" aria-hidden="true"></span>
-        <div className="inner" style={{position:"relative"}}>
-          <span className="brand"><span className="mark">CP</span> CLAT Possible</span>
-          <div>
-            <span className="eyebrow hero-eyebrow">A 3-Day Live CLAT Masterclass for Class 11 &amp; 12 Students and Droppers &middot; CLAT 2027 &amp; 2028</span>
-          </div>
-          <h1 className="hero-h1">In Just 3 Days, Discover the Exact <span className="em">CLAT Rank</span> You Can Score, and the Clear Plan to Reach Your Dream NLU</h1>
-          <p className="hero-sub">Even if you have never opened a CLAT book, 3 days of real strategy from the team behind some of India&rsquo;s top rankers will show you <span className="hl">the rank you are actually capable of</span>, and the exact plan to get there.</p>
-          <p className="hero-host">Hosted live by <b>Dr. Surabhi Modi Sahai</b> (MD &amp; CEO, CLAT Possible), who still mentors the class herself, with real CLAT rankers in the room sharing exactly what they did differently.</p>
+        <div className="inner hero-inner" style={{position:"relative"}}>
+          <span className="eyebrow hero-eyebrow reveal">A 3-Day Live CLAT Masterclass for Class 11 &amp; 12 Students and Droppers &middot; CLAT 2027 &amp; 2028</span>
 
-    
-          <div className="vsl" id="vsl" role="button" tabIndex="0" aria-label="Play the intro video">
-            <div className="vsl-inner">
-              <span className="vsl-ring" aria-hidden="true"></span>
-              <span className="vsl-ring" aria-hidden="true"></span>
-              <span className="vsl-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5.5v13a1 1 0 0 0 1.54.84l10.3-6.5a1 1 0 0 0 0-1.68L8.54 4.66A1 1 0 0 0 7 5.5z"/></svg></span>
-              <span className="vsl-cap">Intro from Dr. Surabhi &middot; video coming</span>
+          <h1 className="hero-h1 reveal">In Just 3 Days, Discover the Exact <span className="uline uline--green"><span className="em em--green">CLAT Rank</span><svg className="uline-svg" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2,11 Q75,2 150,9 Q225,16 298,6" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/></svg></span> You Can Score, and the Clear Plan to Reach Your Dream NLU</h1>
+
+          <p className="hero-sub reveal">Even if you have never opened a CLAT book, 3 days of real strategy from the team behind some of India&rsquo;s top rankers will show you <span className="hl">the rank you are actually capable of</span>, and the exact plan to get there.</p>
+
+          <div className="hero-cred reveal">Hosted live by <b>Dr. Surabhi Modi Sahai</b>, MD &amp; CEO, CLAT Possible <span className="hero-cred-sep">&middot;</span> she still mentors the class herself <span className="hero-cred-sep">&middot;</span> with real CLAT rankers live in the room</div>
+
+          <div className="hcount reveal" aria-label="Price deadline countdown">
+            <span className="hcount-label">Price goes back up when the countdown hits zero</span>
+            <div className="hcount-units" id="countdown">
+              <div className="hcount-unit"><span className="hcount-num" data-d>00</span><span className="hcount-lab">Days</span></div>
+              <span className="hcount-sep">:</span>
+              <div className="hcount-unit"><span className="hcount-num" data-h>00</span><span className="hcount-lab">Hrs</span></div>
+              <span className="hcount-sep">:</span>
+              <div className="hcount-unit"><span className="hcount-num" data-m>00</span><span className="hcount-lab">Min</span></div>
+              <span className="hcount-sep">:</span>
+              <div className="hcount-unit"><span className="hcount-num" data-s>00</span><span className="hcount-lab">Sec</span></div>
             </div>
           </div>
 
-          <div className="estrip">
-            <span className="estrip-lead">3 days, live</span><span className="dot"></span>
-            <span>28, 29 &amp; 30 June 2026</span><span className="dot"></span>
-            <span>11:00 AM IST, 2 hours/day</span><span className="dot"></span>
-            <span>on Zoom</span>
-          </div>
-
-          <div className="count" aria-label="Price deadline countdown">
-            <span className="count-label">Price goes back up when the countdown hits zero</span>
-            <div className="count-clock" id="countdown">
-              <div className="count-cell"><div className="count-num" data-d>00</div><div className="count-unit">Days</div></div>
-              <div className="count-cell"><div className="count-num" data-h>00</div><div className="count-unit">Hrs</div></div>
-              <div className="count-cell"><div className="count-num" data-m>00</div><div className="count-unit">Min</div></div>
-              <div className="count-cell"><div className="count-num" data-s>00</div><div className="count-unit">Sec</div></div>
+          <div className="hero-layout">
+            <div className="hfig reveal">
+              <img src="/hero-thumb.png" alt="CLAT Possible: NLU is Possible. 3-Day Live Workshop with Dr. Surabhi Modi Sahai" />
+            </div>
+            <div className="hmeta">
+              <div className="hcard reveal reveal-d1">
+                <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span>
+                <span className="hcard-k">Dates</span>
+                <span className="hcard-v">28, 29 &amp; 30 June 2026</span>
+              </div>
+              <div className="hcard reveal reveal-d2">
+                <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg></span>
+                <span className="hcard-k">Time</span>
+                <span className="hcard-v">11:00 AM IST &middot; 2 hrs/day</span>
+              </div>
+              <div className="hcard reveal reveal-d3">
+                <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21c5-4.6 7-8 7-11a7 7 0 1 0-14 0c0 3 2 6.4 7 11z"/></svg></span>
+                <span className="hcard-k">Where</span>
+                <span className="hcard-v">Live on Zoom, anywhere in India</span>
+              </div>
+              <div className="hcard reveal reveal-d4">
+                <span className="hcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></span>
+                <span className="hcard-k">For</span>
+                <span className="hcard-v">Class 11, 12 &amp; droppers</span>
+              </div>
             </div>
           </div>
 
-          <a className="cta hero-cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
-            <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-          <p className="cta-note"><span className="pin">&#9679;</span> 100% money-back &middot; Instant Zoom link &middot; No prep needed</p>
+          <div className="hcta reveal">
+            <div className="hprice">
+              <span className="hprice-was">&#8377;499</span>
+              <span className="hprice-badge">Until the deadline</span>
+              <span className="hprice-now">&#8377;49</span>
+            </div>
+            <a className="cta hero-cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+              <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
+            <div className="hcta-guar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg> 100% money-back guarantee</div>
+            <p className="cta-note"><span className="pin">&#9679;</span> Instant Zoom link &middot; No prep needed &middot; Replay if you miss a day</p>
+          </div>
         </div>
       </header>
 
 
-      <section className="section">
-        <div className="inner">
-          <div className="details reveal">
-            <div className="drow"><span className="drow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6.6C10.4 5.4 7.8 4.9 4 5.1v12.6c3.8-.2 6.4.3 8 1.5 1.6-1.2 4.2-1.7 8-1.5V5.1c-3.8-.2-6.4.3-8 1.5z"/><path d="M12 6.6V19.2"/></svg></span><div><div className="drow-k">What</div><div className="drow-v">A 3-day live CLAT masterclass. 6 hours of real teaching, ranker strategies, and your own rank prediction.</div></div></div>
-            <div className="drow"><span className="drow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span><div><div className="drow-k">When</div><div className="drow-v">28, 29 &amp; 30 June 2026. 11:00 AM IST, 2 hours each day. Miss a day, get the 24-hour replay.</div></div></div>
-            <div className="drow"><span className="drow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21c5-4.6 7-8 7-11a7 7 0 1 0-14 0c0 3 2 6.4 7 11z"/></svg></span><div><div className="drow-k">Where</div><div className="drow-v">Live on Zoom, anywhere in India.</div></div></div>
-            <div className="drow"><span className="drow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8.5" r="3"/><circle cx="16.5" cy="9.6" r="2.3"/><path d="M3.6 19c0-3 2.5-4.6 5.4-4.6 1.7 0 3.2.6 4.2 1.6M14.6 19c.1-2.2 1.4-3.5 3.2-3.5 1.4 0 2.7.8 3.2 2.1"/></svg></span><div><div className="drow-k">For</div><div className="drow-v">Class 11 &amp; 12 students, droppers, and first-year students planning to reattempt CLAT 2027 &amp; 2028.</div></div></div>
-            <div className="drow"><span className="drow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20 11.3a7.4 7.4 0 0 1-10.7 6.6L4 19.6l1.8-5.1A7.4 7.4 0 1 1 20 11.3z"/><path d="M8.8 10.6h6.4M8.8 13.1h4"/></svg></span><div><div className="drow-k">Language</div><div className="drow-v">Majorly English.</div></div></div>
+      <section className="section" id="champions">
+        <div className="inner-wide">
+          <div className="sec-head"><span className="eyebrow">Our Champions&rsquo; Wall</span>
+            <h2 className="sec-h2">Celebrating Remarkable<br className="bk"/><span className="em">CLAT Achievements</span></h2></div>
+          <div className="champwall reveal">
+            {CHAMP_ROWS.map((row, r) => (
+              <div className="champrail" key={r}>
+                <div className="champtrack" style={{ "--n": row.length } as React.CSSProperties}>
+                  {[...row, ...row].map((f, i) => (
+                    <div className="champ" key={i} aria-hidden={i >= row.length ? true : undefined}>
+                      <img src={`/champions/${f}.webp`} alt="CLAT Possible topper" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="details-cta reveal">
-            <a className="cta" href="/checkout"><span>Book My Seat, &#8377;49</span><span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-            <p className="cta-note"><span className="ml-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg> <span className="dc-was">&#8377;499</span> &#8377;49 until the deadline</span><span className="ml-sep">&middot;</span><span className="ml-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg> money-back guarantee</span></p>
+
+          <div className="stats reveal">
+            <div className="stat"><div className="stat-num" data-count="20000" data-suffix="+">0</div><div className="stat-lab">students trained</div></div>
+            <div className="stat"><div className="stat-num" data-count="15" data-suffix="+">0</div><div className="stat-lab">years of proven<br/>CLAT results</div></div>
+            <div className="stat"><div className="stat-num">AIR&nbsp;1<span style={{fontSize:".6em"}}>+</span></div><div className="stat-lab">toppers across the<br/>rank list [confirm]</div></div>
+            <div className="stat"><div className="stat-num" data-count="8">0</div><div className="stat-lab">centres across India</div></div>
           </div>
+          <p className="honesty">Centres in Lucknow, New Delhi, Chandigarh, Kanpur, Noida, Mumbai, Patna and Raipur. Every rank and stat locks to the latest verified CLAT result before publish. We do not publish numbers we cannot stand behind.</p>
         </div>
       </section>
 
@@ -68,14 +129,14 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">The honest starting point</span>
-            <h2 className="sec-h2">Do You Dream of a Seat in a Top NLU, <span className="em">But&hellip;</span></h2></div>
+            <h2 className="sec-h2">Do You Dream of a Seat<br className="bk"/>in a Top NLU, <span className="em">But&hellip;</span></h2></div>
           <div className="pains reveal">
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4 1.8c0 1.7-2.5 2-2.5 3.2M12 17h.01" strokeLinecap="round"/></svg></span><p>Confused by the syllabus and exam pattern, and not sure where to even begin?</p></div>
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><path d="M12 3v4M5 8l3 2M19 8l-3 2M4 21c1.5-4 4.4-6 8-6s6.5 2 8 6"/></svg></span><p>Worried about balancing school or board studies with serious CLAT prep?</p></div>
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M3 17l5-5 4 3 5-7 4 4"/></svg></span><p>Overwhelmed by the competition, and secretly unsure if an NLU is realistic for you?</p></div>
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12h4l2 6 4-12 2 6h4"/></svg></span><p>Grinding mock after mock while the score refuses to move, and you cannot see why?</p></div>
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v9l5 3"/><circle cx="12" cy="12" r="9"/></svg></span><p>Demotivated by low mock scores, with results day still months away?</p></div>
-            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19a7 7 0 1 0-7-7M12 12l4-3M9 21h6"/></svg></span><p>Lost in the noise of which coaching, materials, and test series to actually trust?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 0 1 4.7 1.7c0 1.8-2.6 2.1-2.6 3.5"/><path d="M12 17.4h.01"/></svg></span><p>Confused by the syllabus and exam pattern, and not sure where to even begin?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6.6C10.3 5.4 7.6 4.9 4 5.1v12.6c3.6-.2 6.3.3 8 1.5 1.7-1.2 4.4-1.7 8-1.5V5.1c-3.6-.2-6.3.3-8 1.5z"/><path d="M12 6.6V19.2"/></svg></span><p>Worried about balancing school or board studies with serious CLAT prep?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8.4" r="3"/><circle cx="16.6" cy="9.5" r="2.3"/><path d="M3.5 19c0-3 2.6-4.7 5.5-4.7 1.8 0 3.3.6 4.3 1.7M14.7 19c.1-2.3 1.5-3.6 3.3-3.6 1.5 0 2.8.9 3.3 2.2"/></svg></span><p>Overwhelmed by the competition, and secretly unsure if an NLU is realistic for you?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M4 11a8 8 0 0 1 13.4-5.6L20 8"/><path d="M20 3.6V8h-4.4"/><path d="M20 13a8 8 0 0 1-13.4 5.6L4 16"/><path d="M4 20.4V16h4.4"/></svg></span><p>Grinding mock after mock while the score refuses to move, and you cannot see why?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M22 17l-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/></svg></span><p>Demotivated by low mock scores, with results day still months away?</p></div>
+            <div className="pain"><span className="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.7 8.3l-2.2 5.2-5.2 2.2 2.2-5.2z"/><circle cx="12" cy="12" r=".5" fill="currentColor" stroke="none"/></svg></span><p>Lost in the noise of which coaching, materials, and test series to actually trust?</p></div>
           </div>
           <p className="pain-kicker">If even one of these is you, read the next line carefully.</p>
         </div>
@@ -85,7 +146,7 @@ export default function Page() {
       <section className="section">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">The real problem</span>
-            <h2 className="sec-h2">You are asked to gamble lakhs <span className="em">before</span> you know where you stand</h2></div>
+            <h2 className="sec-h2">You are asked to gamble lakhs<br className="bk"/><span className="em">before</span> you know<br className="bk"/>where you stand</h2></div>
           <div className="prose reveal">
             <p className="lede">You have decided you want a top NLU. The trouble is, the moment you start looking, you are flooded.</p>
             <p>A huge syllabus, dozens of coaching options, endless books and test series, and everyone insisting they are the right choice. And almost all of them offer you the same thing: a free demo class. One sample lecture, designed to get you to sign up for a course that costs one to two lakh rupees.</p>
@@ -103,7 +164,7 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">Instead, imagine this</span>
-            <h2 className="sec-h2">In 3 days, you start your journey with a <span className="em">map</span>, not a guess</h2></div>
+            <h2 className="sec-h2">In 3 days, you start your<br className="bk"/>journey with a <span className="em">map</span>,<br className="bk"/>not a guess</h2></div>
           <div className="imagine reveal">
             <div className="snapshot">
               <div className="snap-top">
@@ -209,46 +270,10 @@ export default function Page() {
       </section>
 
 
-      <section className="section section--soft">
-        <div className="inner-wide">
-          <div className="sec-head"><span className="eyebrow">The Champions Wall</span>
-            <h2 className="sec-h2">Students who <span className="em">stopped guessing</span></h2></div>
-          <div className="quotes reveal">
-            <div className="qcard">
-              <span className="qmark">&ldquo;</span>
-              <p className="qtext">I thought NLU was out of my league. The day I saw my actual rank and what was missing, everything changed.</p>
-              <div className="qmeta"><span className="qavatar">A</span><div><div className="qname">[Student name]</div><div className="qrank">AIR [confirm] &middot; [City]</div></div></div>
-              <div className="qslot">Sample voice &middot; replace with a real, consented quote</div>
-            </div>
-            <div className="qcard">
-              <span className="qmark">&ldquo;</span>
-              <p className="qtext">For the first time, someone showed us the plan before asking for a single rupee.</p>
-              <div className="qmeta"><span className="qavatar">P</span><div><div className="qname">[Parent name]</div><div className="qrank">Parent of [student] &middot; [City]</div></div></div>
-              <div className="qslot">Sample voice &middot; replace with a real, consented quote</div>
-            </div>
-            <div className="qcard">
-              <div className="qvideo"><span className="vp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.5v13a1 1 0 0 0 1.54.84l10.3-6.5a1 1 0 0 0 0-1.68L8.54 4.66A1 1 0 0 0 7 5.5z"/></svg></span></div>
-              <p className="qtext">They did not make me study more. They made me study the right section.</p>
-              <div className="qmeta"><span className="qavatar">R</span><div><div className="qname">[Ranker name]</div><div className="qrank">AIR [confirm] &middot; CLAT [year]</div></div></div>
-              <div className="qslot">Ranker video to be added</div>
-            </div>
-          </div>
-
-          <div className="stats reveal">
-            <div className="stat"><div className="stat-num" data-count="20000" data-suffix="+">0</div><div className="stat-lab">students trained</div></div>
-            <div className="stat"><div className="stat-num" data-count="15" data-suffix="+">0</div><div className="stat-lab">years of proven<br/>CLAT results</div></div>
-            <div className="stat"><div className="stat-num">AIR&nbsp;1<span style={{fontSize:".6em"}}>+</span></div><div className="stat-lab">toppers across the<br/>rank list [confirm]</div></div>
-            <div className="stat"><div className="stat-num" data-count="8">0</div><div className="stat-lab">centres across India</div></div>
-          </div>
-          <p className="honesty">Centres in Lucknow, New Delhi, Chandigarh, Kanpur, Noida, Mumbai, Patna and Raipur. Every rank and stat locks to the latest verified CLAT result before publish. We do not publish numbers we cannot stand behind.</p>
-        </div>
-      </section>
-
-
       <section className="section">
         <div className="inner-wide">
           <div className="sec-head"><span className="eyebrow">Meet your host</span>
-            <h2 className="sec-h2">Taught by the people who will <span className="em">actually teach your child</span></h2></div>
+            <h2 className="sec-h2">Taught by the people<br className="bk"/>who will <span className="em">actually<br className="bk"/>teach your child</span></h2></div>
           <div className="host reveal">
             <div className="host-photo"><span className="host-mono">SS</span><span className="host-slot">Portrait to be added</span></div>
             <div>
@@ -271,7 +296,7 @@ export default function Page() {
       <section className="section section--soft">
         <div className="inner-wide">
           <div className="sec-head"><span className="eyebrow">This masterclass is built for you if</span>
-            <h2 className="sec-h2">Wherever you&rsquo;re starting from, you leave with <span className="em">your number</span></h2></div>
+            <h2 className="sec-h2">Wherever you&rsquo;re starting from,<br className="bk"/>you leave with<br className="bk"/><span className="em">your number</span></h2></div>
           <div className="personas reveal">
             <div className="persona"><span className="persona-tag">Class 11 &amp; 12 &middot; just starting</span>
               <h3>The early starter</h3>
@@ -337,8 +362,11 @@ export default function Page() {
             <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
           <p className="cta-note"><span className="pin">&#9679;</span> 100% money-back &middot; &#8377;49 until the deadline &middot; Live on Zoom</p>
           <div className="colophon">
-            Results vary by student effort and starting level. CLAT Possible.<br/>
-            <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+            <p className="disclaimer"><b>Disclaimer:</b> CLAT Possible is an education and coaching webinar programme. The information shared in this webinar is for educational and informational purposes only and does not constitute a guarantee of admission, rank, or any specific outcome. Individual results may vary and depend on each student&rsquo;s own effort, consistency, and preparation.</p>
+            <p className="disclaimer">This website is operated and maintained by CLAT Possible. Use of this website is governed by our <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>. We do not guarantee specific results or admission to any National Law University. Results vary and depend on individual effort, consistency of preparation, and other factors outside our control.</p>
+            <p className="disclaimer">All content is the intellectual property of CLAT Possible. Any duplication, reproduction, or distribution without written permission is strictly prohibited.</p>
+            <p className="disclaimer">This website is owned and operated by CLAT Possible.</p>
+            <p className="colophon-legal"><a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Refund</a> &middot; &copy; 2026 CLAT Possible</p>
           </div>
         </div>
       </section>

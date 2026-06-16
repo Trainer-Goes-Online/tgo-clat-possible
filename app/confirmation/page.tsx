@@ -3,10 +3,8 @@
    in /api/razorpay/verify. */
 export default function ConfirmationPage() {
   return (
-    <div className="page-stage">
+    <div className="page-stage page-light">
       <div className="wrap">
-        <div className="ck-brand"><span className="mark">CP</span> CLAT Possible</div>
-
         <span className="eyebrow">Payment confirmed</span>
         <div className="seal" aria-hidden="true">
           <span className="seal-ring" /><span className="seal-ring b" />
