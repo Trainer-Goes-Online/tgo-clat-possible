@@ -232,8 +232,10 @@ a{color:inherit}
 .hero .hcount-num{color:var(--gold-deep)}
 .hero .hcount-lab{color:#6B7787}
 .hero .hcount-sep{color:var(--gold)}
-.hero .hfig{background:#fff;border-color:rgba(8,126,255,.3);
+.hero .hfig{background:#fff;border-color:rgba(8,126,255,.3);min-height:0;display:block;align-self:start;
   box-shadow:0 12px 34px -18px rgba(10,99,204,.45),0 0 42px rgba(8,126,255,.1)}
+/* hero poster: show the FULL thumbnail, full width, no crop */
+.hero .hfig img{position:static;width:100%;height:auto;display:block;object-fit:contain}
 .hero .hcard{background:#fff;border-color:var(--hairline);box-shadow:0 8px 22px -14px rgba(10,99,204,.32)}
 .hero .hcard:hover{border-color:rgba(8,126,255,.5);background:#F4FAFF}
 .hero .hcard-k{color:#6B7787}
@@ -385,7 +387,7 @@ a{color:inherit}
    distance resolve against the same base; the two card-sets overflow and are clipped. */
 .champtrack{display:flex;flex-wrap:nowrap;gap:var(--gap);width:100%;
   animation:champscroll linear infinite;animation-duration:calc(var(--n) * 3.4s)}
-.champwall:hover .champtrack{animation-play-state:paused}
+/* champions wall scrolls continuously — no hover/click pause */
 .champ{flex:0 0 var(--cardw);background:#fff;border:1px solid var(--hairline);border-radius:var(--radius-m);
   padding:10px 10px 6px;box-shadow:0 14px 34px -26px rgba(21,33,59,.42);transition:transform .25s ease,box-shadow .25s ease}
 .champ:hover{transform:translateY(-4px);box-shadow:0 24px 46px -26px rgba(21,33,59,.55)}
@@ -546,7 +548,7 @@ a{color:inherit}
 }
 @media(max-width:560px){
   .hero-h1{font-size:clamp(24px,6.2vw,32px)}
-  .journey{padding-left:42px}.jnode{left:-38px}
+  .journey{padding-left:42px}.jnode{left:-38px}.jrail,.jfill{left:14px;top:13px}.jstep--final.lit .jnode{left:-40px}
 }
 
 /* ============================================================
@@ -691,12 +693,12 @@ a{color:inherit}
   background:linear-gradient(140deg,var(--gold-lite),var(--gold) 55%,var(--gold-deep));
   box-shadow:0 6px 16px -6px rgba(10,99,204,.7),inset 0 1px 0 rgba(255,255,255,.45)}
 .nrow p{margin:2px 0 0;font-size:14.5px;line-height:1.55;color:#3A4256}.nrow b{color:var(--ink);font-weight:600}
-.wa{display:flex;align-items:center;gap:16px;justify-content:space-between;max-width:540px;margin:clamp(28px,3vw,36px) auto 0;text-align:left;padding:20px 22px;border-radius:16px;background:linear-gradient(180deg,rgba(8,126,255,.1),rgba(8,126,255,.03));border:1px solid rgba(8,126,255,.3)}
+.wa{display:flex;flex-direction:column;align-items:stretch;gap:16px;max-width:540px;margin:clamp(28px,3vw,36px) auto 0;text-align:left;padding:20px 22px;border-radius:16px;background:linear-gradient(180deg,rgba(8,126,255,.1),rgba(8,126,255,.03));border:1px solid rgba(8,126,255,.3)}
 .wa-t{font-family:var(--f-display);font-weight:600;font-size:17px;margin:0}
 .wa-d{margin:4px 0 0;font-size:12.5px;color:#9aa2b6}
-.wa-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;color:#FFFFFF;text-decoration:none;background:linear-gradient(180deg,var(--gold-lite),var(--gold));padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.4);box-shadow:0 12px 28px -12px rgba(10,99,204,.7);transition:.2s}
+.wa-btn{display:flex;width:100%;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15px;color:#FFFFFF;text-decoration:none;background:linear-gradient(180deg,var(--gold-lite),var(--gold));padding:14px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.4);box-shadow:0 12px 28px -12px rgba(10,99,204,.7);transition:.2s}
 .wa-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}.wa-btn svg{width:16px;height:16px}
-@media(max-width:520px){.wa{flex-direction:column;align-items:flex-start}}
+@media(max-width:520px){.wa{align-items:stretch}}
 @media(prefers-reduced-motion:reduce){.seal-ring{animation:none;opacity:.5;transform:scale(1.2)}}
 
 /* hero fixes: body highlight + the "3 Days · Live" event-strip lead */
@@ -732,7 +734,7 @@ a{color:inherit}
 @media(max-width:480px){
   .section{padding:var(--section-pad) 18px}
   .hero{padding-left:18px;padding-right:18px}
-  .journey{padding-left:36px}.jnode{left:-34px}
+  .journey{padding-left:36px}.jnode{left:-34px}.jrail,.jfill{left:12px;top:13px}.jstep--final.lit .jnode{left:-36px}
   .count-clock{gap:8px}.count-cell{min-width:54px}
   .sec-head{margin-bottom:clamp(26px,7vw,40px)}
 }

@@ -15,7 +15,7 @@ const TICKER = [
   WEBINAR.datesLong,
   `${WEBINAR.time} · ${WEBINAR.duration}`,
   "₹49 until the deadline",
-  "Live on Zoom · Replay if you miss a day",
+  "Live on Zoom · Anywhere in India",
   "Find the rank you can actually score",
   "100% money-back guarantee",
 ];
@@ -92,7 +92,7 @@ export default function Page() {
             <a className="cta hero-cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
               <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
             <div className="hcta-guar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg> 100% money-back guarantee</div>
-            <p className="cta-note"><span className="pin">&#9679;</span> Instant Zoom link &middot; No prep needed &middot; Replay if you miss a day</p>
+            <p className="cta-note"><span className="pin">&#9679;</span> Instant Zoom link &middot; No prep needed</p>
           </div>
         </div>
       </header>
@@ -339,7 +339,7 @@ export default function Page() {
           <div className="sec-head"><span className="eyebrow">Before you book</span>
             <h2 className="sec-h2">The honest <span className="em">answers</span></h2></div>
           <div className="faq reveal">
-            <details><summary><span className="faq-q">Is it live or recorded?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Fully live, all 3 days, with a dedicated Q&amp;A. Miss a day and you get a 24-hour replay.</p></details>
+            <details><summary><span className="faq-q">Is it live or recorded?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Fully live, all 3 days, with a dedicated Q&amp;A. And yes &mdash; if you cannot attend a session live, the recording will be shared so you never miss anything.</p></details>
             <details><summary><span className="faq-q">How do I join?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">After you register, we send your private Zoom link by email and WhatsApp, with reminders before each day. You can join from your phone or laptop.</p></details>
             <details><summary><span className="faq-q">I have never prepared for CLAT. How can it predict my rank?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Because you do not take the test cold. Across Days 1 and 2 you learn the foundations and the exact strategies that produce ranks. The Day 3 test measures what you can do once you understand how CLAT actually works, which is why it can fairly project your potential even as a complete beginner, and build a plan around it.</p></details>
             <details open><summary><span className="faq-q">How is this different from the free demo classes everyone offers?<span className="faq-most"><span className="dot"></span>Most asked</span></span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">A demo class is one lecture built to sell you a one to two lakh course. This is 3 full days of real teaching and live ranker strategies, and you leave with your own projected rank and a customised plan, before anyone asks you to buy anything.</p></details>
