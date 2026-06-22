@@ -65,20 +65,19 @@ export default function TermsPage() {
         </p>
       </Sec>
 
-      <Sec n="06" title="Payment and pricing">
+      <Sec n="06" title="Pricing">
         <p>
-          The Program fee is displayed at checkout and processed securely through
-          our payment partner, Razorpay. Prices may change from time to time; the
-          amount payable is the amount shown at the time of your purchase, and the
-          final amount charged is determined by our server. We do not store your
-          full card or banking details.
+          The Program is currently offered <strong>free of charge</strong> &mdash;
+          we do not collect any payment, card, or banking details to register or
+          attend. If this ever changes, the price will be shown clearly before you
+          register.
         </p>
       </Sec>
 
       <Sec n="07" title="Refunds">
         <p>
-          Refunds are governed by our <a href="/refund">Refund Policy</a>. Please
-          review it before purchasing.
+          Because the Program is free, there is nothing to pay and nothing to
+          refund. See our <a href="/refund">Refund Policy</a> for details.
         </p>
       </Sec>
 
@@ -103,10 +102,9 @@ export default function TermsPage() {
       <Sec n="10" title="Third-party services">
         <p>
           The Program relies on third-party services, including Zoom (delivery),
-          Razorpay (payments), WhatsApp (communication), and Meta (advertising and
-          analytics). Your use of those services is also subject to their
-          respective terms and policies, and we are not responsible for their
-          availability or conduct.
+          WhatsApp (communication), and Meta (advertising and analytics). Your use
+          of those services is also subject to their respective terms and policies,
+          and we are not responsible for their availability or conduct.
         </p>
       </Sec>
 

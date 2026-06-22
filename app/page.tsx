@@ -1,4 +1,5 @@
 import FunnelScripts from "./FunnelScripts";
+import RegisterModal from "./RegisterModal";
 import { WEBINAR } from "@/lib/webinar";
 
 const CHAMPS = [
@@ -14,10 +15,10 @@ const TICKER = [
   "3-Day Live CLAT Masterclass",
   WEBINAR.datesLong,
   `${WEBINAR.time} · ${WEBINAR.duration}`,
-  "₹49 until the deadline",
+  "Limited free seats",
   "Live on Zoom · Anywhere in India",
   "Find the rank you can actually score",
-  "100% money-back guarantee",
+  "100% free to join",
 ];
 
 export default function Page() {
@@ -42,8 +43,8 @@ export default function Page() {
 
           <div className="hero-cred reveal">Hosted live by <b>Dr. Surabhi Modi Sahai</b>, MD &amp; CEO, CLAT Possible <span className="hero-cred-sep">&middot;</span> she still mentors the class herself <span className="hero-cred-sep">&middot;</span> with real CLAT rankers live in the room</div>
 
-          <div className="hcount reveal" aria-label="Price deadline countdown">
-            <span className="hcount-label">Price goes back up when the countdown hits zero</span>
+          <div className="hcount reveal" aria-label="Registration deadline countdown">
+            <span className="hcount-label">Free registration closes when Day 1 begins</span>
             <div className="hcount-units" id="countdown">
               <div className="hcount-unit"><span className="hcount-num" data-d>00</span><span className="hcount-lab">Days</span></div>
               <span className="hcount-sep">:</span>
@@ -86,12 +87,12 @@ export default function Page() {
           <div className="hcta reveal">
             <div className="hprice">
               <span className="hprice-was">&#8377;499</span>
-              <span className="hprice-badge">Until the deadline</span>
-              <span className="hprice-now">&#8377;49</span>
+              <span className="hprice-badge">Limited seats</span>
+              <span className="hprice-now">FREE</span>
             </div>
-            <a className="cta hero-cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+            <a className="cta hero-cta" href="#register"><span>Reserve My Free Seat</span>
               <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-            <div className="hcta-guar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg> 100% money-back guarantee</div>
+            <div className="hcta-guar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg> 100% free &middot; No card needed</div>
             <p className="cta-note"><span className="pin">&#9679;</span> Instant Zoom link &middot; No prep needed</p>
           </div>
         </div>
@@ -184,7 +185,7 @@ export default function Page() {
             </div>
           </div>
           <div style={{textAlign:"center",marginTop:"clamp(28px,3.4vw,40px)"}}>
-            <a className="cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+            <a className="cta" href="#register"><span>Reserve My Free Seat</span>
               <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
           </div>
         </div>
@@ -316,7 +317,7 @@ export default function Page() {
           </div>
           <div style={{textAlign:"center",marginTop:"clamp(30px,3.6vw,44px)"}}>
             <p style={{maxWidth:"48ch",margin:"0 auto clamp(18px,2vw,24px)",fontSize:"16px",color:"var(--ink)"}}>Do not let confusion or fear hold you back. See your number, get your roadmap, and take the first real step toward your NLU dream.</p>
-            <a className="cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+            <a className="cta" href="#register"><span>Reserve My Free Seat</span>
               <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
           </div>
         </div>
@@ -327,9 +328,9 @@ export default function Page() {
         <span className="stage-grain" aria-hidden="true"></span>
         <div className="inner" style={{position:"relative"}}>
           <h2>Stop wondering where you stand. <span className="em">Come find out.</span></h2>
-          <a className="cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+          <a className="cta" href="#register"><span>Reserve My Free Seat</span>
             <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-          <p className="cta-note"><span className="pin">&#9679;</span> Money-back &middot; &#8377;49 until the deadline &middot; Instant Zoom link</p>
+          <p className="cta-note"><span className="pin">&#9679;</span> Free to join &middot; No card needed &middot; Instant Zoom link</p>
         </div>
       </section>
 
@@ -345,7 +346,7 @@ export default function Page() {
             <details open><summary><span className="faq-q">How is this different from the free demo classes everyone offers?<span className="faq-most"><span className="dot"></span>Most asked</span></span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">A demo class is one lecture built to sell you a one to two lakh course. This is 3 full days of real teaching and live ranker strategies, and you leave with your own projected rank and a customised plan, before anyone asks you to buy anything.</p></details>
             <details><summary><span className="faq-q">I am only in Class 11. Too early?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">It is the best time. Learn how CLAT works now, see what you are capable of, and start with a plan instead of guesswork.</p></details>
             <details><summary><span className="faq-q">I have already prepared a lot. Is there anything new for me?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Yes. Stuck students are almost always losing ranks in one or two areas they cannot see. The strategy sessions and your Day 3 result pinpoint exactly where.</p></details>
-            <details><summary><span className="faq-q">Why is it only &#8377;49?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Because it is the start of a relationship, not the whole product. We would rather you see how we teach, and get a real result in your hands, than take our word for it.</p></details>
+            <details><summary><span className="faq-q">Is it really free?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Yes, completely free. This is the start of a relationship, not the whole product &mdash; we would rather you see how we teach, and get a real result in your hands, than take our word for it. No card, no payment.</p></details>
             <details><summary><span className="faq-q">Do I have to buy a course after?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">No. You leave with your rank and your roadmap regardless. What you do next is entirely your call.</p></details>
             <details><summary><span className="faq-q">Will real CLAT rankers really be there?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Yes, live across Days 1 and 2, sharing their actual strategies. Not recorded clips.</p></details>
             <details><summary><span className="faq-q">Will it be in English or Hindi?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Majorly English.</p></details>
@@ -359,9 +360,9 @@ export default function Page() {
         <div className="inner" style={{position:"relative"}}>
           <p className="finale-quote">Somewhere a student with your exact marks is about to take the NLU seat you wanted, for no reason except they knew their <span className="em">number</span>, and you didn&rsquo;t.</p>
           <p className="finale-sub">You can know yours in 3 days. Or keep guessing until results day.</p>
-          <a className="cta hero-cta" href="/checkout"><span>Book My Seat, &#8377;49</span>
+          <a className="cta hero-cta" href="#register"><span>Reserve My Free Seat</span>
             <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-          <p className="cta-note"><span className="pin">&#9679;</span> 100% money-back &middot; &#8377;49 until the deadline &middot; Live on Zoom</p>
+          <p className="cta-note"><span className="pin">&#9679;</span> Free to join &middot; Register before the deadline &middot; Live on Zoom</p>
           <div className="colophon">
             <p className="disclaimer"><b>Disclaimer:</b> CLAT Possible is an education and coaching webinar programme. The information shared in this webinar is for educational and informational purposes only and does not constitute a guarantee of admission, rank, or any specific outcome. Individual results may vary and depend on each student&rsquo;s own effort, consistency, and preparation.</p>
             <p className="disclaimer">This website is operated and maintained by CLAT Possible. Use of this website is governed by our <a href="/terms">Terms &amp; Conditions</a> and <a href="/privacy">Privacy Policy</a>. We do not guarantee specific results or admission to any National Law University. Results vary and depend on individual effort, consistency of preparation, and other factors outside our control.</p>
@@ -371,10 +372,11 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <a className="mcta" id="mcta" href="/checkout">
-        <span className="mcta-price"><span className="mcta-was">&#8377;499</span>&#8377;49<span className="mcta-sub">Until the deadline</span></span>
-        <span className="mcta-btn">Book My Seat <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span>
+      <a className="mcta" id="mcta" href="#register">
+        <span className="mcta-price"><span className="mcta-was">&#8377;499</span>FREE<span className="mcta-sub">Limited seats</span></span>
+        <span className="mcta-btn">Register Free <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span>
       </a>
+      <RegisterModal />
       <FunnelScripts />
     </>
   );

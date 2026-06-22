@@ -35,9 +35,8 @@ export default function PrivacyPage() {
             address, phone number, city, and class/status, provided at checkout.
           </li>
           <li>
-            <strong>Payment information</strong> — processed securely by our
-            payment partner, Razorpay. We do not store your full card or banking
-            details on our servers.
+            <strong>No payment information</strong> — the Program is free, so we do
+            not collect or process any card or banking details.
           </li>
           <li>
             <strong>Usage and device data</strong> — pages viewed, clicks,
@@ -80,8 +79,7 @@ export default function PrivacyPage() {
           include:
         </p>
         <ul>
-          <li>Razorpay — payment processing.</li>
-          <li>Google Sheets and Pabbly Connect — our customer records (CRM).</li>
+          <li>Google Sheets and Pabbly Connect — our registration records (CRM).</li>
           <li>Meta — advertising measurement, including hashed identifiers shared via the Conversions API.</li>
           <li>Zoom — live session delivery.</li>
           <li>WhatsApp — reminders and communication.</li>

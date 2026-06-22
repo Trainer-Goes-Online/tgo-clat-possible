@@ -25,8 +25,10 @@ export type MetaCapiInput = {
   fbp?: string;
   clientIp?: string;
   clientUserAgent?: string;
-  valueRupees: number; // major units (rupees), NOT paise
+  valueRupees: number; // major units (rupees), NOT paise. 0 omits value/currency.
   currency: string;
+  standardEventName?: string; // default "Purchase"; pass "" to omit the standard event
+  customEventName?: string; // default CHECKOUT_CONFIG.customEventName
 };
 
 export async function sendMetaPurchaseEvents(input: MetaCapiInput) {
@@ -61,23 +63,29 @@ export async function sendMetaPurchaseEvents(input: MetaCapiInput) {
     ...(input.clientIp && { client_ip_address: input.clientIp }),
   };
 
+  // value/currency only carry meaning for paid conversions; omit for free (0).
+  const customData: Record<string, unknown> = { payment_id: input.paymentId };
+  if (input.valueRupees > 0) {
+    customData.currency = input.currency;
+    customData.value = input.valueRupees;
+  }
+
   const baseEvent = {
     event_time: Math.floor(Date.now() / 1000),
     event_id: input.paymentId,
     action_source: "website",
     event_source_url: input.eventSourceUrl,
     user_data: userData,
-    custom_data: {
-      currency: input.currency,
-      value: input.valueRupees,
-      payment_id: input.paymentId,
-    },
+    custom_data: customData,
   };
 
-  const events = [
-    { ...baseEvent, event_name: "Purchase" },
-    { ...baseEvent, event_name: CHECKOUT_CONFIG.customEventName },
-  ];
+  // Paid funnel: Purchase + sales. Free funnel: CompleteRegistration + custom.
+  const stdName =
+    input.standardEventName === undefined ? "Purchase" : input.standardEventName;
+  const custName = input.customEventName || CHECKOUT_CONFIG.customEventName;
+  const events: Array<Record<string, unknown>> = [];
+  if (stdName) events.push({ ...baseEvent, event_name: stdName });
+  events.push({ ...baseEvent, event_name: custName });
 
   const payload: Record<string, unknown> = { data: events };
   const testCode = (process.env.META_TEST_EVENT_CODE || "").trim();

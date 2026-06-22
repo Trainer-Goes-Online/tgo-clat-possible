@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { capturePageParams, forwardParamsToCheckoutLinks } from "@/lib/params";
+import { capturePageParams } from "@/lib/params";
 import { WEBINAR } from "@/lib/webinar";
 
 /* Client island for the landing page: the price-deadline countdown, the
@@ -11,10 +11,9 @@ import { WEBINAR } from "@/lib/webinar";
 export default function FunnelScripts() {
   useEffect(() => {
     // Capture every landing-page URL param (utm_*, fbclid, gclid, …) into the
-    // cp_params cookie and forward them onto every /checkout CTA link.
+    // cp_params cookie so the register modal can forward them on submit.
     try {
       capturePageParams();
-      forwardParamsToCheckoutLinks();
     } catch {}
 
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;

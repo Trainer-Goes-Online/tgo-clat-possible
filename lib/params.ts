@@ -56,14 +56,3 @@ export function paramsToQuery(params: ParamMap): string {
   });
   return usp.toString();
 }
-
-/** Rewrite every internal /checkout link so it carries the stored params. */
-export function forwardParamsToCheckoutLinks() {
-  if (typeof document === "undefined") return;
-  const qs = paramsToQuery(getStoredParams());
-  if (!qs) return;
-  document.querySelectorAll<HTMLAnchorElement>('a[href^="/checkout"]').forEach((el) => {
-    const base = (el.getAttribute("href") || "/checkout").split("?")[0];
-    el.setAttribute("href", `${base}?${qs}`);
-  });
-}

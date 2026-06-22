@@ -5,7 +5,7 @@ import Script from "next/script";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
 
 export const metadata: Metadata = {
-  title: "CLAT Possible — The 3-Day CLAT Rank Roadmap · ₹49",
+  title: "CLAT Possible — The 3-Day CLAT Rank Roadmap · Free",
   description:
     "A 3-day live CLAT masterclass for Class 11 & 12 students and droppers. See the exact rank you can score, and the clear plan to your dream NLU.",
 };
