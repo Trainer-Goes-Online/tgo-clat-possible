@@ -42,7 +42,7 @@ export default function ConfirmationPage() {
           <div className="dcell"><div className="d">Day 2</div><div className="n">{WEBINAR.day2Short}</div><div className="t">{WEBINAR.timeShort}</div></div>
           <div className="dcell"><div className="d">Day 3</div><div className="n">{WEBINAR.day3Short}</div><div className="t">{WEBINAR.timeShort}</div></div>
         </div>
-        <p className="dnote">{`Live on Zoom · ${WEBINAR.durationLong} · miss a day, get the 24-hour replay`}</p>
+        <p className="dnote">{`Live on Zoom · ${WEBINAR.durationLong} · recording shared only if you genuinely can't make it`}</p>
 
         <div className="next">
           <div className="next-h">What happens next</div>
