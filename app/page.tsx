@@ -277,7 +277,7 @@ export default function Page() {
       </section>
 
 
-      <section className="section">
+      <section className="section section--soft">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">What&rsquo;s the catch</span>
             <h2 className="sec-h2">Why is it <span className="em">free</span>?</h2></div>
