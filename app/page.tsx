@@ -105,7 +105,7 @@ export default function Page() {
             <h2 className="sec-h2">You can see how hard your child works. You just cannot see if&nbsp;it&nbsp;is&nbsp;<span className="em">working</span>.</h2></div>
           <div className="prose reveal">
             <p>Every evening the door closes and the studying begins. The mocks, the notes, the late nights. You watch the effort, and you tell them you are proud. But somewhere underneath, there is a question you do not say out loud: <i>is any of this actually moving them closer to an NLU, or are we just hoping?</i></p>
-            <p>Here is the hard truth about CLAT. The exam is brutally competitive. Around 60,000 students compete every year for roughly 3,000 seats at the top National Law Universities [confirm figures against the latest cycle]. Fewer than the top 5 percent get in. And almost no family finds out where their child truly stands until results day, when nothing can be changed.</p>
+            <p>Here is the hard truth about CLAT. The exam is brutally competitive &mdash; every year, tens of thousands of students compete for a few thousand seats at the top National Law Universities, and only a small fraction get in. And almost no family finds out where their child truly stands until results day, when nothing can be changed.</p>
             <p>So the effort continues, blind. Nobody can tell you which section is quietly bleeding 30 or 40 ranks. Nobody shows you whether a top NLU is genuinely within reach or slipping away. You are asked to believe, to spend, and to wait.</p>
             <p className="lede">There is a smarter way, and it starts with a number.</p>
           </div>
@@ -247,10 +247,10 @@ export default function Page() {
           <div className="stats reveal">
             <div className="stat"><div className="stat-num" data-count="20000" data-suffix="+">0</div><div className="stat-lab">students trained</div></div>
             <div className="stat"><div className="stat-num" data-count="15" data-suffix="+">0</div><div className="stat-lab">years teaching<br/>CLAT</div></div>
-            <div className="stat"><div className="stat-num">AIR&nbsp;1&ndash;14</div><div className="stat-lab">rankers produced over<br/>15 years [confirm]</div></div>
-            <div className="stat"><div className="stat-num" data-count="8">0</div><div className="stat-lab">offline centres<br/>across India [confirm]</div></div>
+            <div className="stat"><div className="stat-num">AIR&nbsp;1<span style={{fontSize:".6em"}}>+</span></div><div className="stat-lab">rankers produced over<br/>15 years</div></div>
+            <div className="stat"><div className="stat-num" data-count="8">0</div><div className="stat-lab">offline centres<br/>across India</div></div>
           </div>
-          <p className="honesty">15+ years teaching CLAT, with a base in Lucknow and offline centres across India [confirm cities and count]. Top rankers in the AIR 1 to 14 range produced over 15 years, a cumulative record, not a single year. Every rank and figure locks to the latest verified CLAT result before publish. We do not publish numbers we cannot stand behind.</p>
+          <p className="honesty">15+ years teaching CLAT, with offline centres in Lucknow, New Delhi, Chandigarh, Kanpur, Noida, Mumbai, Patna and Raipur. Top rankers produced over 15 years, a cumulative record, not a single year. Every rank and figure locks to the latest verified CLAT result before publish. We do not publish numbers we cannot stand behind.</p>
         </div>
       </section>
 
@@ -267,7 +267,7 @@ export default function Page() {
               <div className="pills">
                 <span className="pill">English &amp; Critical Reasoning Mentor</span>
                 <span className="pill">Ph.D., University of Lucknow</span>
-                <span className="pill">Fulbright (FLTA) Nominee [confirm]</span>
+                <span className="pill">Fulbright (FLTA) nominee, UC Davis</span>
               </div>
               <p className="host-bio">Dr. Surabhi Modi Sahai personally teaches the CLAT English and Critical Reasoning sections, and built the academic backbone of CLAT Possible. <span className="lede">The founder who still teaches the class herself, not a name rented to a banner.</span></p>
               <p className="host-bio"><b>For parents:</b> this is a teacher-led house, not a funded ad-factory that buys its toppers. You will see exactly how your child is taught, live, before anyone discusses a single rupee of fees. Real CLAT rankers join live across Days 1 and 2, answering the one question every aspirant has: what did you do differently?</p>
@@ -307,7 +307,7 @@ export default function Page() {
             <h2 className="sec-h2">The honest <span className="em">answers</span></h2></div>
           <div className="faq reveal">
             <details><summary><span className="faq-q">Is it really free?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Yes, completely. Registration costs nothing and there is no obligation to buy anything afterward. No card, no payment.</p></details>
-            <details><summary><span className="faq-q">Is it live or recorded?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Fully live, all 3 days, with a dedicated Q&amp;A. [confirm replay policy: the live site currently states sessions are not recorded.]</p></details>
+            <details><summary><span className="faq-q">Is it live or recorded?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Fully live, all 3 days, with a dedicated Q&amp;A. We don&rsquo;t share recordings by default &mdash; but if you genuinely can&rsquo;t attend a session live, reach out and we&rsquo;ll share that day&rsquo;s recording so you don&rsquo;t fall behind.</p></details>
             <details><summary><span className="faq-q">How do I join?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">After you register, we send your private Zoom link by email and WhatsApp, with reminders before each day. Your child can join from a phone or laptop.</p></details>
             <details><summary><span className="faq-q">My child is only in Class 11. Is it too early?</span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">It is the best time. The earlier you see the number, the cheaper and easier the gap is to close, and the more of the two-year window you still have.</p></details>
             <details open><summary><span className="faq-q">How is this different from the free demo classes other brands run?<span className="faq-most"><span className="dot"></span>Most asked</span></span><span className="faq-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 8l5 5 5-5"/></svg></span></summary><p className="faq-a">Those are usually a short pitch designed to sell a Rs 1 lakh to Rs 1.5 lakh course. This is 3 full days of actual teaching, plus your child&rsquo;s real projected rank and a written plan, with no obligation to buy.</p></details>
