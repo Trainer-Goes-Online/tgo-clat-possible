@@ -271,6 +271,11 @@ a{color:inherit}
 .prose{max-width:60ch;margin:0 auto;font-size:clamp(16px,1.5vw,18px);line-height:1.62;color:#2b3346}
 .prose p{margin:0 0 1.1em}
 .prose .lede{font-weight:500;color:var(--ink)}
+/* highlighted callout: accent left bar + soft azure wash for an important line */
+.prose .callout{margin:clamp(22px,2.6vw,30px) 0 0;padding:18px 22px;border-left:3px solid var(--gold);
+  background:linear-gradient(90deg,rgba(8,126,255,.1),rgba(8,126,255,.02));
+  border-radius:0 var(--radius-m) var(--radius-m) 0;font-weight:600;color:var(--ink);
+  font-size:clamp(16px,1.5vw,18.5px);line-height:1.55}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:clamp(34px,4vw,52px) auto 0}
 .cmp{border-radius:var(--radius-m);padding:22px 22px 24px}
 .cmp-tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}

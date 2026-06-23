@@ -146,35 +146,6 @@ export default function Page() {
       </section>
 
 
-      <section className="section">
-        <div className="inner">
-          <div className="sec-head"><span className="eyebrow">Instead, imagine this</span>
-            <h2 className="sec-h2">In 3 days, your child starts their <br className="bk"/>journey with a <span className="em">map</span>, <br className="bk"/>not a guess</h2></div>
-          <div className="imagine reveal">
-            <div className="snapshot">
-              <div className="snap-top">
-                <span className="snap-kicker">After the 3 days</span>
-                <span className="snap-status"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4 4 10-10.5"/></svg>On track</span>
-              </div>
-              <h3 className="snap-title">Your child&rsquo;s whole plan, on <span className="em">a single page</span>.</h3>
-              <div className="snap-grid">
-                <div className="snap-field"><span className="snap-k"><span className="node"></span>Roadmap</span><span className="snap-v">Their real rank today, mapped straight to their target NLU.</span></div>
-                <div className="snap-field"><span className="snap-k"><span className="node"></span>Strategy</span><span className="snap-v">The exact approach toppers actually use, not guesswork.</span></div>
-                <div className="snap-field"><span className="snap-k"><span className="node"></span>Confidence</span><span className="snap-v">You know their number, and exactly what moves it.</span></div>
-                <div className="snap-field"><span className="snap-k"><span className="node"></span>Mocks</span><span className="snap-v">Time management cracked, scores finally climbing.</span></div>
-                <div className="snap-field snap-field--full"><span className="snap-k"><span className="node"></span>Family</span><span className="snap-v">The whole family on the same page, because you saw the plan before paying a single rupee.</span></div>
-              </div>
-              <div className="snap-foot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.6l8 3v5.4c0 4.4-3 7.6-8 8.8-5-1.2-8-4.4-8-8.8V5.6z"/><path d="M9 12l2 2 4-4.2"/></svg>Built with your child, live, across the 3 days. Yours before you commit a rupee.</div>
-            </div>
-          </div>
-          <div style={{textAlign:"center",marginTop:"clamp(28px,3.4vw,40px)"}}>
-            <a className="cta" href="#register"><span>Reserve Your Child&rsquo;s Free Seat</span>
-              <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-          </div>
-        </div>
-      </section>
-
-
       <section className="section stage" id="roadmap">
         <span className="stage-grain" aria-hidden="true"></span>
         <div className="inner" style={{position:"relative"}}>
@@ -280,28 +251,6 @@ export default function Page() {
             <div className="stat"><div className="stat-num" data-count="8">0</div><div className="stat-lab">offline centres<br/>across India [confirm]</div></div>
           </div>
           <p className="honesty">15+ years teaching CLAT, with a base in Lucknow and offline centres across India [confirm cities and count]. Top rankers in the AIR 1 to 14 range produced over 15 years, a cumulative record, not a single year. Every rank and figure locks to the latest verified CLAT result before publish. We do not publish numbers we cannot stand behind.</p>
-
-          <div className="sec-head" style={{marginTop:"clamp(48px,5vw,72px)"}}><span className="eyebrow">Parents who stopped guessing</span></div>
-          <div className="quotes reveal">
-            <div className="qcard">
-              <span className="qmark">&ldquo;</span>
-              <p className="qtext">For the first time, someone showed us the plan before asking for a single rupee. We finally knew our daughter was on the right track.</p>
-              <div className="qmeta"><span className="qavatar">P</span><div><div className="qname">[Parent name]</div><div className="qrank">Parent of [student] · [City]</div></div></div>
-              <span className="qslot">Placeholder · supply a real consented quote</span>
-            </div>
-            <div className="qcard">
-              <span className="qmark">&ldquo;</span>
-              <p className="qtext">I thought a top NLU was out of my league. The day I saw my actual rank and what was missing, everything changed.</p>
-              <div className="qmeta"><span className="qavatar">S</span><div><div className="qname">[Student name]</div><div className="qrank">AIR [confirm] · [City]</div></div></div>
-              <span className="qslot">Placeholder · supply a real consented quote</span>
-            </div>
-            <div className="qcard">
-              <span className="qmark">&ldquo;</span>
-              <p className="qtext">The Day 3 rank predictor was the wake-up call we needed. We stopped guessing and started fixing the exact gaps it found.</p>
-              <div className="qmeta"><span className="qavatar">T</span><div><div className="qname">[Topper name]</div><div className="qrank">AIR [confirm] · [City]</div></div></div>
-              <span className="qslot">Placeholder · supply a real consented quote</span>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -328,35 +277,6 @@ export default function Page() {
       </section>
 
 
-      <section className="section section--soft">
-        <div className="inner-wide">
-          <div className="sec-head"><span className="eyebrow">This masterclass is built for your child if</span>
-            <h2 className="sec-h2">Wherever your child is starting from, they leave&nbsp;with <span className="em">their&nbsp;number</span></h2></div>
-          <div className="personas reveal">
-            <div className="persona"><span className="persona-tag">Class 11 &amp; 12 &middot; just starting</span>
-              <h3>The early starter</h3>
-              <p>Your child wants prep that actually gets them there, and you want an honest answer on whether a top NLU is realistic.</p>
-              <span className="evenif">Even if they have never opened a CLAT book, they walk out with an accurate projected rank and a plan, because they learn the foundations first, then take the test.</span></div>
-            <div className="persona"><span className="persona-tag">Stuck &middot; school or dropper</span>
-              <h3>The grinder</h3>
-              <p>They have put in the hours and the score will not move, and nobody can see why.</p>
-              <span className="evenif">Even if they have fallen behind, they leave knowing exactly how far the gap is, and precisely what closes it.</span></div>
-            <div className="persona"><span className="persona-tag">First-year &middot; reattempting</span>
-              <h3>The reattempter</h3>
-              <p>A sharper, smarter strategy this time, built on their real current rank, not last year&rsquo;s regret.</p></div>
-            <div className="persona"><span className="persona-tag">Parent</span>
-              <h3>The parent who wants clarity</h3>
-              <p>You want to know how to support your child, what good prep actually looks like, and what the investment buys, before you commit.</p></div>
-          </div>
-          <div style={{textAlign:"center",marginTop:"clamp(30px,3.6vw,44px)"}}>
-            <p style={{maxWidth:"48ch",margin:"0 auto clamp(18px,2vw,24px)",fontSize:"16px",color:"var(--ink)"}}>Do not let confusion or fear hold your child back. See their number, get their roadmap, and take the first real step toward their NLU dream.</p>
-            <a className="cta" href="#register"><span>Reserve Your Child&rsquo;s Free Seat</span>
-              <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5"/></svg></span></a>
-          </div>
-        </div>
-      </section>
-
-
       <section className="section">
         <div className="inner">
           <div className="sec-head"><span className="eyebrow">What&rsquo;s the catch</span>
@@ -364,7 +284,7 @@ export default function Page() {
           <div className="prose reveal">
             <p className="lede">Because we would rather show you how we teach than tell you.</p>
             <p>Most institutes ask for a lakh upfront and let you find out later whether it was worth it. We do it the other way around: we give your child three days of real teaching and their actual projected rank, free, and let the results speak.</p>
-            <p className="lede">If you choose to continue with us afterward, wonderful. If not, your child still keeps their rank and their plan. No pressure, no obligation.</p>
+            <p className="callout">If you choose to continue with us afterward, wonderful. If not, your child still keeps their rank and their plan. <span className="em">No pressure, no obligation.</span></p>
           </div>
         </div>
       </section>
