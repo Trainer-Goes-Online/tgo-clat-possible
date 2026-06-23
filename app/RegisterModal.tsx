@@ -107,8 +107,8 @@ export default function RegisterModal() {
         </button>
 
         <div className="rmodal-head">
-          <span className="eyebrow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z" /></svg> Limited free seats</span>
-          <h3>Reserve Your <span className="em">Free Seat</span></h3>
+          <span className="eyebrow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z" /></svg> Reserve a free seat</span>
+          <h3>Reserve Your Child&rsquo;s <span className="em">Free Seat</span></h3>
           <p>{`Live on Zoom · ${WEBINAR.datesShort}, ${WEBINAR.timeShort} · no payment, no card.`}</p>
         </div>
 
@@ -122,7 +122,7 @@ export default function RegisterModal() {
             <div className="phone"><span className="dial">+91</span><input id="rph" type="tel" required placeholder="98765 43210" autoComplete="tel-national" value={form.phone} onChange={set("phone")} /></div></div>
           <div className="field"><label htmlFor="rgr">Class / Status</label><input id="rgr" required placeholder="Class 11 / 12 / Dropper / First-year" value={form.grade} onChange={set("grade")} /></div>
           <div className="field"><label htmlFor="rct">Town / City</label><input id="rct" required placeholder="Lucknow" value={form.town} onChange={set("town")} /></div>
-          <button className="cta pay" type="submit" disabled={loading}><span>{loading ? "Reserving…" : "Book My Free Seat"}</span>
+          <button className="cta pay" type="submit" disabled={loading}><span>{loading ? "Reserving…" : "Book My Child's Free Seat"}</span>
             <span className="cta-arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 10h11M11 5.5L15.5 10 11 14.5" /></svg></span></button>
           <p className="rmodal-fine">100% free &middot; No card needed &middot; Link on WhatsApp</p>
         </form>
